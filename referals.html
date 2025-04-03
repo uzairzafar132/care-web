@@ -140,7 +140,7 @@
 
         <div class="col-12 col-lg-8">
           <div class="contact-form">
-            <form id="contactForm">
+            <form id="appointment-form" class="appointment-form" method="POST" action="/api/referral.js">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" class="form-control2" name="first_name" id="first_name" placeholder="First Name" required />
@@ -382,34 +382,6 @@
     <script src="js/jquery-ui.min.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    <script>
-      document.getElementById("contactForm").addEventListener("submit", async function(event) {
-          event.preventDefault();
-      
-          const formData = new FormData(this);
-      
-          try {
-              const response = await fetch("/api/referral", {
-                  method: "POST",
-                  body: formData
-              });
-      
-              const result = await response.json();
-              const messageElement = document.getElementById("responseMessage");
-      
-              if (response.ok) {
-                  messageElement.style.color = "green";
-                  messageElement.textContent = "Referral submitted successfully!";
-                  this.reset();
-              } else {
-                  messageElement.style.color = "red";
-                  messageElement.textContent = result.error || "Failed to submit referral.";
-              }
-          } catch (error) {
-              console.error("Error:", error);
-              document.getElementById("responseMessage").textContent = "An error occurred. Please try again.";
-          }
-      });
-      </script>
+    <script src="js/contact.js"></script>
   </body>
 </html>
