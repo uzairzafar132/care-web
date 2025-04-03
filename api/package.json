@@ -1,25 +1,16 @@
 {
-  "name": "server",
+  "name": "medifybill-appointments",
   "version": "1.0.0",
-  "description": "",
+  "description": "A form that sends appointment requests via email using Nodemailer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node contact.js",
-    "dev": "nodemon contact.js"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^2.2.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^5.1.0",
-    "formidable": "^3.5.2",
-    "nodemailer": "^6.10.0"
+    "formidable": "^2.0.1",
+    "nodemailer": "^6.8.0"
   },
-  "devDependencies": {
-    "nodemon": "^3.1.9"
-  }
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }
