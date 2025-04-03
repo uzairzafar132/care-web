@@ -13,11 +13,11 @@ module.exports = (req, res) => {
 
             // Extract values from the form fields
             const { 
-                name, phone, email, message
+                name, number, email, message
             } = fields;
 
             // Validate required fields (excluding estimatedCollection)
-            if (!name || !email || !phone || !message) {
+            if (!name || !email || !number || !message) {
                 res.status(400).json({ error: 'All fields except Estimated Collection are required.' });
                 return;
             }
@@ -27,7 +27,7 @@ module.exports = (req, res) => {
                 <h1>New Appointment Request</h1>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Phone:</strong> ${number}</p>
                 <p><strong>Message:</strong> ${message}</p>
             `;
 
