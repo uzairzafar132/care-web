@@ -49,14 +49,14 @@ module.exports = (req, res) => {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
-                    user: process.env.EMAIL_USER, // Use environment variables for security
-                    pass: process.env.EMAIL_PASS
+                    user: 'medifybill@gmail.com', // Use your email
+                    pass: 'wevn ctmd sndn spoe'   // Use your email password or app password
                 }
             });
 
             // Send the email
             const mailOptions = {
-                from: process.env.EMAIL_USER,
+                from: email,
                 to: 'zuzair00@gmail.com', // Recipient email
                 subject: 'New Referral Submission',
                 html: emailContent
